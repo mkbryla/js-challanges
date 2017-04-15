@@ -1,13 +1,20 @@
 var secondsHand = document.querySelector('.second-hand');
 var minutesHand = document.querySelector('.min-hand');
 var hoursHand = document.querySelector('.hour-hand');
+var dayName = document.querySelector('h1');
+var fullDate = document.querySelector('h2');
+
+var days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
 function setDate() {
     var date = new Date();
-    //console.log(date);
+
     var seconds = date.getSeconds();
     var minutes = date.getMinutes();
     var hours = date.getHours();
+    var day = date.getDate();
+    var month = date.getMonth() + 1;
+    var year = date.getFullYear();
 
     var secondsDegrees = ((seconds / 60) * 360) + 90;
     var minutesDegrees = ((minutes / 60) * 360) + ((seconds / 60) * 6) + 90;
@@ -16,5 +23,11 @@ function setDate() {
     secondsHand.style.transform = 'rotate(' + secondsDegrees + 'deg)';
     minutesHand.style.transform = 'rotate(' + minutesDegrees + 'deg)';
     hoursHand.style.transform = 'rotate(' + hoursDegrees + 'deg)';
+
+    dayName.innerHTML = days[date.getDay() - 1];
+    fullDate.innerHTML = day + '.' + month + '.' + year;
+
+
 }
+
 setInterval(setDate, 1000);
