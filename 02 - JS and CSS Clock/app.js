@@ -4,7 +4,7 @@ var hoursHand = document.querySelector('.hour-hand');
 var dayName = document.querySelector('h1');
 var fullDate = document.querySelector('h2');
 
-var days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+var days = ['Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 function setDate() {
     var date = new Date();
@@ -24,7 +24,7 @@ function setDate() {
     minutesHand.style.transform = 'rotate(' + minutesDegrees + 'deg)';
     hoursHand.style.transform = 'rotate(' + hoursDegrees + 'deg)';
 
-    dayName.innerHTML = days[date.getDay() - 1];
+    dayName.innerHTML = days[date.getDay()];
     fullDate.innerHTML = day + '.' + month + '.' + year;
 
 
