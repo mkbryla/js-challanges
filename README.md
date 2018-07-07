@@ -1,2 +1,2 @@
-# js-challanges
-Simple JavaScript challanges from javascript30.com
+# js-challenges
+Simple JavaScript challenges from javascript30.com
